@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How Padni collects, uses, shares, retains, and protects information." />
+  <title>Privacy Policy | Padni</title>
+  <link rel="icon" type="image/png" href="../padni-icon.png" />
+  <link rel="apple-touch-icon" href="../padni-icon.png" />
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5ee;
+      --paper-bright: #fffdf7;
+      --ink: #17211f;
+      --muted: #66716d;
+      --line: rgba(23, 33, 31, .14);
+      --blue: #0b86e8;
+      --blue-deep: #0869b5;
+      --green: #2fc465;
+      --orange: #f58b3d;
+      --shadow: 0 24px 70px rgba(43, 62, 57, .12);
+      --display: "Avenir Next", "Trebuchet MS", sans-serif;
+      --body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(11, 134, 232, .17), transparent 25rem),
+        radial-gradient(circle at 92% 15%, rgba(245, 139, 61, .13), transparent 24rem),
+        linear-gradient(160deg, var(--paper-bright), var(--paper));
+      font: 1.08rem/1.68 var(--body);
+      min-height: 100vh;
+    }
+    a { color: var(--blue-deep); text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid rgba(11, 134, 232, .35); outline-offset: 4px; border-radius: .35rem; }
+    body > header {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      min-height: 5.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: var(--display);
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    .wordmark img { width: 2.15rem; height: 2.15rem; border-radius: .7rem; box-shadow: 0 8px 22px rgba(11, 134, 232, .22); }
+    .wordmark i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 .25rem rgba(47, 196, 101, .14); }
+    nav { display: flex; align-items: center; gap: 1.25rem; font-size: .92rem; font-weight: 700; }
+    nav a { color: var(--ink); text-decoration: none; }
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: .7rem 1.05rem;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      font-family: var(--display);
+      font-weight: 750;
+    }
+    main { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    .hero { padding: clamp(4.2rem, 10vw, 8.5rem) 0 5rem; max-width: 60rem; }
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(11, 134, 232, .26);
+      background: rgba(255, 255, 255, .62);
+      color: var(--blue-deep);
+      border-radius: 999px;
+      padding: .42rem .75rem;
+      font: 750 .76rem/1 var(--display);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -.045em; line-height: 1.08; }
+    h1 { margin: 1.15rem 0 1.25rem; font-size: clamp(3.3rem, 9vw, 7.4rem); max-width: 10ch; }
+    .hero p { max-width: 42rem; margin: 0; color: var(--muted); font-size: clamp(1.25rem, 2vw, 1.55rem); }
+    .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
+    .button.secondary { color: var(--ink); background: rgba(255, 255, 255, .7); border: 1px solid var(--line); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-bottom: 5rem; }
+    .feature {
+      min-height: 18rem;
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 2rem;
+      padding: 1.7rem;
+      background: rgba(255, 255, 255, .58);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .feature:nth-child(2) { transform: translateY(1.8rem); }
+    .feature .number { font: 750 .78rem/1 var(--display); color: var(--orange); letter-spacing: .08em; }
+    .feature h2 { margin: 3rem 0 .8rem; font-size: 1.8rem; }
+    .feature p { color: var(--muted); margin: 0; }
+    .trust {
+      margin: 2rem 0 6rem;
+      padding: clamp(2rem, 5vw, 4rem);
+      border-radius: 2.5rem;
+      color: white;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(47, 196, 101, .3), transparent 20rem),
+        #152421;
+    }
+    .trust h2 { max-width: 15ch; font-size: clamp(2.1rem, 5vw, 4rem); margin: 0 0 1rem; }
+    .trust p { color: #c8d5d1; max-width: 48rem; }
+    .trust a { color: #8fd1ff; }
+    .document { max-width: 800px; padding: 4.5rem 0 7rem; }
+    .document-header { padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); margin-bottom: 2.5rem; }
+    .document h1 { font-size: clamp(2.8rem, 7vw, 5.6rem); max-width: none; }
+    .document h2 { margin: 3rem 0 .8rem; font-size: 1.55rem; }
+    .document h3 { margin: 1.8rem 0 .5rem; font-size: 1.16rem; }
+    .document p, .document li { color: #3e4a46; }
+    .document li + li { margin-top: .5rem; }
+    .meta { color: var(--muted); font: 650 .9rem/1.5 var(--display); }
+    .notice { border-left: 4px solid var(--blue); padding: .5rem 0 .5rem 1.15rem; margin: 2rem 0; }
+    .support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+    .support-card { border: 1px solid var(--line); background: rgba(255,255,255,.58); border-radius: 1.4rem; padding: 1.3rem; }
+    .support-card h2 { margin-top: 0; font-size: 1.25rem; }
+    footer {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font: 650 .82rem/1.5 var(--display);
+    }
+    footer div { display: flex; gap: 1rem; flex-wrap: wrap; }
+    footer a { color: inherit; }
+    @media (max-width: 760px) {
+      body > header { align-items: flex-start; padding-top: 1.1rem; }
+      nav { justify-content: flex-end; flex-wrap: wrap; gap: .7rem 1rem; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { padding-top: 4rem; }
+      .feature-grid, .support-grid { grid-template-columns: 1fr; }
+      .feature { min-height: 13rem; }
+      .feature:nth-child(2) { transform: none; }
+      .feature h2 { margin-top: 2rem; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body class="legal privacy">
+  <header>
+      <a class="wordmark" href="../" aria-label="Padni home">
+        <img src="../padni-icon.png" alt="" />
+        <span>Padni</span><i aria-hidden="true"></i>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../privacy">Privacy</a>
+        <a href="../terms">Terms</a>
+        <a href="../support">Support</a>
+        <a class="nav-cta" href="https://46.225.183.243.sslip.io/app">Open Padni</a>
+      </nav>
+    </header>
+  <main>
+    <article class="document">
+      <header class="document-header">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective and last updated: 21 July 2026</p>
+      </header>
+      <p>This Privacy Policy explains how Padni collects, uses, shares, retains, and protects information when you use the Padni mobile apps, web app, and connected services (together, the "Service").</p>
+
+      <h2>1. Information Padni processes</h2>
+      <h3>Account and authentication information</h3>
+      <p>Padni stores information needed to create and secure your account, including your email address, a protected password representation, session information, and security events.</p>
+      <h3>Content you provide</h3>
+      <p>This includes messages, tasks, projects, checklists, workflows, reminders, preferences, and other information you choose to give Padni. Padni may derive structured information and personalisation notes from this content so it can provide the features you request.</p>
+      <h3>Connected-service information</h3>
+      <p>If you choose to connect a calendar or email provider, Padni processes the account identifiers, authorisation tokens, event or message information, and actions needed to provide that integration. Connections are optional and can be disconnected from Settings.</p>
+      <h3>Device, usage, and diagnostic information</h3>
+      <p>Padni processes device push-notification tokens, app activity, request timing, service logs, crash or error information, and security signals needed to deliver notifications, maintain reliability, prevent abuse, and understand whether core features are working.</p>
+
+      <h2>2. How information is used</h2>
+      <ul>
+        <li>Provide conversations, tasks, projects, reminders, workflows, games, and connected-service features.</li>
+        <li>Carry out actions you request, such as creating a calendar event or sorting an email.</li>
+        <li>Personalise responses and choose useful times and wording for reminders.</li>
+        <li>Synchronise data across your devices and recover safely from offline use.</li>
+        <li>Secure accounts, investigate errors, prevent abuse, and improve service reliability.</li>
+        <li>Comply with legal obligations and enforce the Terms of Service.</li>
+      </ul>
+
+      <h2>3. Google user data</h2>
+      <p>When you connect Google Calendar, Padni may read calendar lists, event details, attendees, dates, times, and related metadata, and may create, update, or delete events when you request it. Padni uses this data to provide calendar features and calendar-aware assistance.</p>
+      <p>Padni does not sell Google user data, use it for targeted advertising, or allow humans to read it except where you have given permission, it is necessary for security or support, or the law requires it. Padni's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+
+      <h2>4. Service providers and sharing</h2>
+      <p>Padni shares information only where needed to operate the Service, follow your instructions, protect users, or comply with law. Depending on the features you use, recipients can include:</p>
+      <ul>
+        <li>AI model providers that process relevant prompt and context data to generate responses or classifications.</li>
+        <li>Google and Microsoft when you connect their calendar or email services.</li>
+        <li>Apple Push Notification service and Firebase Cloud Messaging for notifications.</li>
+        <li>Hosting, networking, security, logging, and web-search providers used to run requested features.</li>
+      </ul>
+      <p>Padni does not sell personal information and does not operate an advertising network.</p>
+
+      <h2>5. Storage, retention, and deletion</h2>
+      <p>Account information and user-created content are retained while your account is active and as needed to provide the Service. To reduce cost and unnecessary retention, Padni may suspend automated features after extended inactivity and may delete an account after 12 months of inactivity, subject to warnings, operational configuration, and legal requirements.</p>
+      <p>You can delete your account from Settings in the iOS, Android, or web app. Account deletion removes user-scoped data from the active Service and invalidates active sessions. Limited security records, operational logs, or backups may remain temporarily where needed for fraud prevention, reliability, legal compliance, or disaster recovery, and are removed or overwritten under their normal retention schedules.</p>
+
+      <h2>6. Security</h2>
+      <p>Padni uses safeguards including encrypted transport, scoped account access, protected credentials, encrypted connected-service tokens, least-privilege service boundaries, and monitoring. No online service can guarantee absolute security.</p>
+
+      <h2>7. Your choices and rights</h2>
+      <p>You can disconnect integrations, change notification permissions, review or amend information through Padni, and delete your account. Depending on where you live, you may also have rights to access, correct, export, restrict, object to, or erase personal information.</p>
+
+      <h2>8. Children</h2>
+      <p>Padni is not directed to children under 13, or below the minimum digital-consent age that applies where they live. Padni does not knowingly collect information from children who cannot lawfully consent to the Service.</p>
+
+      <h2>9. International processing</h2>
+      <p>Service providers may process information in countries other than your own. Padni seeks to use appropriate contractual, technical, and organisational safeguards where required.</p>
+
+      <h2>10. Changes and contact</h2>
+      <p>This policy may change as Padni develops. Material changes will be communicated through the Service or this page, and the date above will be updated. Privacy questions and requests can be raised through the <a href="../support">Support page</a>.</p>
+    </article>
+    </main>
+  <footer>
+    <span>&copy; 2026 Padni. A calmer way to get life admin done.</span>
+    <div><a href="../privacy">Privacy</a><a href="../terms">Terms</a><a href="../support">Support</a></div>
+  </footer>
+</body>
+</html>

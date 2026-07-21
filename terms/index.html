@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The terms that govern use of the Padni service." />
+  <title>Terms of Service | Padni</title>
+  <link rel="icon" type="image/png" href="../padni-icon.png" />
+  <link rel="apple-touch-icon" href="../padni-icon.png" />
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f5ee;
+      --paper-bright: #fffdf7;
+      --ink: #17211f;
+      --muted: #66716d;
+      --line: rgba(23, 33, 31, .14);
+      --blue: #0b86e8;
+      --blue-deep: #0869b5;
+      --green: #2fc465;
+      --orange: #f58b3d;
+      --shadow: 0 24px 70px rgba(43, 62, 57, .12);
+      --display: "Avenir Next", "Trebuchet MS", sans-serif;
+      --body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(11, 134, 232, .17), transparent 25rem),
+        radial-gradient(circle at 92% 15%, rgba(245, 139, 61, .13), transparent 24rem),
+        linear-gradient(160deg, var(--paper-bright), var(--paper));
+      font: 1.08rem/1.68 var(--body);
+      min-height: 100vh;
+    }
+    a { color: var(--blue-deep); text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid rgba(11, 134, 232, .35); outline-offset: 4px; border-radius: .35rem; }
+    body > header {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      min-height: 5.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-family: var(--display);
+    }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    .wordmark img { width: 2.15rem; height: 2.15rem; border-radius: .7rem; box-shadow: 0 8px 22px rgba(11, 134, 232, .22); }
+    .wordmark i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 .25rem rgba(47, 196, 101, .14); }
+    nav { display: flex; align-items: center; gap: 1.25rem; font-size: .92rem; font-weight: 700; }
+    nav a { color: var(--ink); text-decoration: none; }
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: .7rem 1.05rem;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      font-family: var(--display);
+      font-weight: 750;
+    }
+    main { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    .hero { padding: clamp(4.2rem, 10vw, 8.5rem) 0 5rem; max-width: 60rem; }
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(11, 134, 232, .26);
+      background: rgba(255, 255, 255, .62);
+      color: var(--blue-deep);
+      border-radius: 999px;
+      padding: .42rem .75rem;
+      font: 750 .76rem/1 var(--display);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -.045em; line-height: 1.08; }
+    h1 { margin: 1.15rem 0 1.25rem; font-size: clamp(3.3rem, 9vw, 7.4rem); max-width: 10ch; }
+    .hero p { max-width: 42rem; margin: 0; color: var(--muted); font-size: clamp(1.25rem, 2vw, 1.55rem); }
+    .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
+    .button.secondary { color: var(--ink); background: rgba(255, 255, 255, .7); border: 1px solid var(--line); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-bottom: 5rem; }
+    .feature {
+      min-height: 18rem;
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 2rem;
+      padding: 1.7rem;
+      background: rgba(255, 255, 255, .58);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .feature:nth-child(2) { transform: translateY(1.8rem); }
+    .feature .number { font: 750 .78rem/1 var(--display); color: var(--orange); letter-spacing: .08em; }
+    .feature h2 { margin: 3rem 0 .8rem; font-size: 1.8rem; }
+    .feature p { color: var(--muted); margin: 0; }
+    .trust {
+      margin: 2rem 0 6rem;
+      padding: clamp(2rem, 5vw, 4rem);
+      border-radius: 2.5rem;
+      color: white;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(47, 196, 101, .3), transparent 20rem),
+        #152421;
+    }
+    .trust h2 { max-width: 15ch; font-size: clamp(2.1rem, 5vw, 4rem); margin: 0 0 1rem; }
+    .trust p { color: #c8d5d1; max-width: 48rem; }
+    .trust a { color: #8fd1ff; }
+    .document { max-width: 800px; padding: 4.5rem 0 7rem; }
+    .document-header { padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); margin-bottom: 2.5rem; }
+    .document h1 { font-size: clamp(2.8rem, 7vw, 5.6rem); max-width: none; }
+    .document h2 { margin: 3rem 0 .8rem; font-size: 1.55rem; }
+    .document h3 { margin: 1.8rem 0 .5rem; font-size: 1.16rem; }
+    .document p, .document li { color: #3e4a46; }
+    .document li + li { margin-top: .5rem; }
+    .meta { color: var(--muted); font: 650 .9rem/1.5 var(--display); }
+    .notice { border-left: 4px solid var(--blue); padding: .5rem 0 .5rem 1.15rem; margin: 2rem 0; }
+    .support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+    .support-card { border: 1px solid var(--line); background: rgba(255,255,255,.58); border-radius: 1.4rem; padding: 1.3rem; }
+    .support-card h2 { margin-top: 0; font-size: 1.25rem; }
+    footer {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font: 650 .82rem/1.5 var(--display);
+    }
+    footer div { display: flex; gap: 1rem; flex-wrap: wrap; }
+    footer a { color: inherit; }
+    @media (max-width: 760px) {
+      body > header { align-items: flex-start; padding-top: 1.1rem; }
+      nav { justify-content: flex-end; flex-wrap: wrap; gap: .7rem 1rem; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero { padding-top: 4rem; }
+      .feature-grid, .support-grid { grid-template-columns: 1fr; }
+      .feature { min-height: 13rem; }
+      .feature:nth-child(2) { transform: none; }
+      .feature h2 { margin-top: 2rem; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body class="legal terms">
+  <header>
+      <a class="wordmark" href="../" aria-label="Padni home">
+        <img src="../padni-icon.png" alt="" />
+        <span>Padni</span><i aria-hidden="true"></i>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../privacy">Privacy</a>
+        <a href="../terms">Terms</a>
+        <a href="../support">Support</a>
+        <a class="nav-cta" href="https://46.225.183.243.sslip.io/app">Open Padni</a>
+      </nav>
+    </header>
+  <main>
+    <article class="document">
+      <header class="document-header">
+        <span class="eyebrow">Legal</span>
+        <h1>Terms of Service</h1>
+        <p class="meta">Effective and last updated: 21 July 2026</p>
+      </header>
+      <p>These Terms govern your use of the Padni mobile apps, web app, and connected services (the "Service"). By creating an account or using the Service, you agree to these Terms.</p>
+
+      <h2>1. What Padni provides</h2>
+      <p>Padni is an AI-assisted productivity service for conversations, tasks, projects, reminders, workflows, calendars, selected email actions, and related life admin. Features can change as the Service develops.</p>
+
+      <h2>2. Accounts and security</h2>
+      <p>You must provide accurate account information, keep your credentials secure, and tell Padni support if you believe your account has been compromised. You are responsible for activity performed through your account unless caused by Padni's failure to use reasonable safeguards.</p>
+
+      <h2>3. AI and automated actions</h2>
+      <div class="notice"><strong>Padni can make mistakes.</strong> Review important dates, recipients, bookings, financial information, and other consequential details before relying on them.</div>
+      <p>Padni is not an emergency service and does not provide medical, legal, financial, or other regulated professional advice. Connected-service actions are performed from your instructions and available context, but provider outages, ambiguous language, or model errors can produce an unexpected result.</p>
+
+      <h2>4. Connected services</h2>
+      <p>You may authorise Padni to access third-party services such as Google or Microsoft. Your use of those services remains subject to their terms. You can disconnect an integration in Settings, although previously created events or completed actions remain with the third-party service.</p>
+
+      <h2>5. Your content</h2>
+      <p>You retain ownership of content you provide. You give Padni a limited permission to host, process, reproduce, and transform that content only as needed to provide, secure, and improve the Service. You confirm that you have the right to provide the content and instruct Padni to process it.</p>
+
+      <h2>6. Acceptable use</h2>
+      <p>You must not misuse the Service, interfere with its operation, attempt unauthorised access, evade security controls, distribute malware, infringe others' rights, or use Padni to facilitate unlawful or seriously harmful activity.</p>
+
+      <h2>7. Availability and changes</h2>
+      <p>Padni aims to be reliable but does not promise uninterrupted or error-free operation. Features may be changed, suspended, or withdrawn for maintenance, security, legal, or product reasons. Where practical, reasonable notice will be provided for material changes.</p>
+
+      <h2>8. Suspension and termination</h2>
+      <p>You may stop using Padni or delete your account at any time. Padni may restrict or terminate access where reasonably necessary to address security risk, unlawful activity, serious misuse, non-payment for a future paid service, or a material breach of these Terms. Inactive accounts may be handled as described in the Privacy Policy.</p>
+
+      <h2>9. Liability</h2>
+      <p>Nothing in these Terms excludes liability that cannot legally be excluded. To the extent permitted by law, Padni is not liable for indirect or consequential loss, loss caused by inaccurate AI output that you could reasonably have checked, or failures of third-party services outside Padni's reasonable control. Consumer rights that apply to you are not affected.</p>
+
+      <h2>10. Governing terms</h2>
+      <p>These Terms are governed by the laws of England and Wales, without removing any mandatory consumer protection you receive under the law where you live. If a provision is unenforceable, the remaining provisions continue to apply.</p>
+
+      <h2>11. Changes and contact</h2>
+      <p>These Terms may be updated as Padni changes. Material updates will be communicated through the Service or this page. Questions can be raised through the <a href="../support">Support page</a>.</p>
+    </article>
+    </main>
+  <footer>
+    <span>&copy; 2026 Padni. A calmer way to get life admin done.</span>
+    <div><a href="../privacy">Privacy</a><a href="../terms">Terms</a><a href="../support">Support</a></div>
+  </footer>
+</body>
+</html>
