@@ -14,6 +14,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/padni-favicon-96.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <script src="/theme.js"></script>
   <style>
     :root {
       color-scheme: light;
@@ -350,6 +351,7 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition: none !important; }
     }
   </style>
+  <link rel="stylesheet" href="/theme.css" />
 </head>
 <body class="legal privacy">
   <header>
@@ -361,6 +363,10 @@
         <a href="../#how-it-helps">How it helps</a>
         <a href="../#moments">Everyday moments</a>
         <a href="../privacy">Privacy</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+          <span class="theme-toggle__label" data-theme-label>Dark</span>
+        </button>
         <a class="nav-cta" href="https://app.padni.ai">Open Padni</a>
       </nav>
     </header>
