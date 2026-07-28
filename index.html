@@ -231,6 +231,175 @@
     .how-card .number { color: var(--orange); font: 800 .75rem/1 var(--display); letter-spacing: .08em; }
     .how-card h3 { margin: 2.2rem 0 .75rem; font-size: 1.8rem; }
     .how-card p { margin: 0; color: var(--muted); }
+    .households {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: clamp(2.5rem, 7vw, 6.5rem);
+      align-items: center;
+      margin: 2rem 0 0;
+      padding: clamp(2.2rem, 6vw, 5rem);
+      border: 1px solid var(--household-border);
+      border-radius: 2.6rem;
+      background: var(--household-background);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .households::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 24rem;
+      height: 24rem;
+      right: -8rem;
+      top: -10rem;
+      border: 4.2rem solid var(--household-orbit);
+      border-radius: 50%;
+      transform: rotate(-12deg);
+    }
+    .household-copy h2 {
+      max-width: 10ch;
+      margin: .9rem 0 1rem;
+      font-size: clamp(2.7rem, 5vw, 4.8rem);
+    }
+    .household-copy > p { color: var(--muted); }
+    .household-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: 1.6rem;
+    }
+    .household-points span {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .55rem .75rem;
+      border: 1px solid var(--household-chip-border);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      background: var(--household-chip);
+      font: 750 .76rem/1.2 var(--display);
+    }
+    .household-points span::before {
+      content: "\2713";
+      display: grid;
+      place-items: center;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      color: white;
+      background: var(--green);
+      font-size: .65rem;
+    }
+    .household-board {
+      position: relative;
+      padding: clamp(1.2rem, 3vw, 1.7rem);
+      border: 1px solid var(--household-board-border);
+      border-radius: 1.8rem;
+      background: var(--household-board);
+      box-shadow: 0 24px 60px rgba(55, 68, 51, .14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transform: rotate(1.2deg);
+    }
+    .household-board-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-family: var(--display);
+    }
+    .household-board-header small {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .household-board-header strong {
+      display: block;
+      margin-top: .25rem;
+      font-size: 1.2rem;
+      letter-spacing: -.025em;
+    }
+    .member-stack { display: flex; padding-right: .4rem; }
+    .member {
+      width: 2.25rem;
+      height: 2.25rem;
+      display: grid;
+      place-items: center;
+      margin-right: -.45rem;
+      border: 3px solid var(--household-board);
+      border-radius: 50%;
+      color: var(--ink);
+      background: var(--moment-blue);
+      font: 800 .72rem/1 var(--display);
+    }
+    .member:nth-child(2) { background: var(--moment-orange); }
+    .shared-task {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: .8rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-top: 1px solid var(--line);
+    }
+    .task-check {
+      width: 1.45rem;
+      height: 1.45rem;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--task-check-border);
+      border-radius: 50%;
+      color: transparent;
+      font: 800 .72rem/1 var(--display);
+    }
+    .shared-task.done .task-check {
+      border-color: var(--green);
+      color: white;
+      background: var(--green);
+    }
+    .shared-task-copy strong {
+      display: block;
+      font: 780 .95rem/1.3 var(--display);
+      letter-spacing: -.018em;
+    }
+    .shared-task-copy span {
+      display: block;
+      margin-top: .18rem;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.3;
+    }
+    .shared-task.done .shared-task-copy strong {
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+    .task-owner {
+      padding: .42rem .58rem;
+      border-radius: 999px;
+      color: var(--ink-soft);
+      background: var(--household-owner);
+      font: 750 .7rem/1 var(--display);
+      white-space: nowrap;
+    }
+    .household-note {
+      margin: 1rem 0 0;
+      padding: .85rem 1rem;
+      border-radius: 1rem;
+      color: var(--ink-soft);
+      background: var(--household-note);
+      font-size: .86rem;
+      line-height: 1.45;
+    }
+    .household-note strong {
+      color: var(--blue-deep);
+      font-family: var(--display);
+    }
     .personal {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -342,9 +511,13 @@
       .life-card:nth-of-type(2), .life-card:nth-of-type(3) { margin-inline: 0; }
       .load-list { grid-template-columns: repeat(2, 1fr); }
       .load-list span { min-height: 6rem; }
-      .moments-grid, .how-grid, .personal, .motivation, .trust, .support-grid { grid-template-columns: 1fr; }
+      .moments-grid, .how-grid, .households, .personal, .motivation, .trust, .support-grid { grid-template-columns: 1fr; }
       .moment { min-height: 17rem; }
-      .personal { border-radius: 1.8rem; }
+      .households, .personal { border-radius: 1.8rem; }
+      .households { padding-inline: 1.25rem; }
+      .household-board { transform: none; }
+      .shared-task { grid-template-columns: auto 1fr; }
+      .task-owner { grid-column: 2; justify-self: start; margin-top: -.35rem; }
       .trust-copy { padding-top: 0; }
       footer { flex-direction: column; }
     }
@@ -363,7 +536,7 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="./#how-it-helps">How it helps</a>
-        <a href="./#moments">Everyday moments</a>
+        <a href="./#households">Households</a>
         <a href="./privacy">Privacy</a>
         <button class="theme-toggle" type="button" data-theme-toggle>
           <span class="theme-toggle__icon" aria-hidden="true"></span>
@@ -474,6 +647,56 @@
           <h3>Moves things forward</h3>
           <p>Padni can prepare tasks, update calendar details, organise the day, and give you a gentler first step when something feels stuck.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="households" id="households" aria-labelledby="households-title">
+      <div class="household-copy">
+        <span class="eyebrow">Households · shared tasks</span>
+        <h2 id="households-title">The mental load shouldn't live in one person's head.</h2>
+        <p>Create a household, invite the people you share life with, and keep the jobs everyone needs to know about in one clear place. Anyone can see what needs doing, take a task, or hand it over, while personal tasks stay personal.</p>
+        <div class="household-points" aria-label="Household feature highlights">
+          <span>One shared task space</span>
+          <span>Clear ownership</span>
+          <span>Personal stays personal</span>
+        </div>
+      </div>
+      <div class="household-board" aria-label="Example of a shared household task list">
+        <div class="household-board-header">
+          <div>
+            <small>Household</small>
+            <strong>Home</strong>
+          </div>
+          <div class="member-stack" aria-label="Two household members">
+            <span class="member" aria-hidden="true">Y</span>
+            <span class="member" aria-hidden="true">S</span>
+          </div>
+        </div>
+        <div class="shared-task">
+          <span class="task-check" aria-hidden="true"></span>
+          <div class="shared-task-copy">
+            <strong>Return the school form</strong>
+            <span>Due tomorrow</span>
+          </div>
+          <span class="task-owner">Sam</span>
+        </div>
+        <div class="shared-task">
+          <span class="task-check" aria-hidden="true"></span>
+          <div class="shared-task-copy">
+            <strong>Book the boiler service</strong>
+            <span>Ready for someone to take</span>
+          </div>
+          <span class="task-owner">Unclaimed</span>
+        </div>
+        <div class="shared-task done">
+          <span class="task-check" aria-hidden="true">&#10003;</span>
+          <div class="shared-task-copy">
+            <strong>Pick up the prescription</strong>
+            <span>Finished this afternoon</span>
+          </div>
+          <span class="task-owner">You</span>
+        </div>
+        <p class="household-note"><strong>Padni keeps everyone in step.</strong> Shared changes stay visible to the household, without exposing anyone's private task list.</p>
       </div>
     </section>
 
