@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Padni finds, remembers and manages the little things you carry in your head—so you don't have to." />
+  <meta name="description" content="Padni takes the mental load out of everyday life—remembering tasks, plans and important details across iPhone, Android and the web." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#f4f1e8" />
   <meta property="og:title" content="Padni | Less mental load. More headspace." />
-  <meta property="og:description" content="Padni finds, remembers and manages the little things you carry in your head—so you don't have to." />
+  <meta property="og:description" content="Padni takes the mental load out of everyday life—remembering tasks, plans and important details across iPhone, Android and the web." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://padni.ai/" />
   <meta property="og:image" content="https://padni.ai/padni-icon.png" />
@@ -17,6 +17,17 @@
   <link rel="icon" type="image/png" sizes="1024x1024" href="/padni-icon.png" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Padni",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Android, Web",
+      "url": "https://padni.ai/",
+      "description": "Padni takes the mental load out of everyday life by remembering tasks, plans and important details."
+    }
+  </script>
   <script src="/theme.js"></script>
   <style>
     :root {
@@ -129,6 +140,11 @@
     .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 2rem; }
     .button { padding: .82rem 1.25rem; }
     .button.secondary { color: var(--ink); background: rgba(255, 255, 255, .7); border: 1px solid var(--line); }
+    .nav-cta.secondary {
+      color: var(--ink);
+      background: var(--surface-glass);
+      border: 1px solid var(--line);
+    }
     .story-link { align-self: center; color: var(--ink-soft); font: 750 .9rem/1.3 var(--display); text-decoration-thickness: 1px; }
     .headspace-scene {
       position: relative;
@@ -449,6 +465,208 @@
     .progress-token div { position: relative; z-index: 1; max-width: 10rem; text-align: center; font-family: var(--display); }
     .progress-token strong { display: block; font-size: clamp(3.6rem, 8vw, 5.8rem); letter-spacing: -.07em; line-height: .9; }
     .progress-token span { display: block; margin-top: .7rem; font-size: .78rem; font-weight: 800; line-height: 1.25; letter-spacing: .07em; text-transform: uppercase; }
+    .mobile-app {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      padding: clamp(5.5rem, 10vw, 9rem) max(1rem, calc((100vw - 1120px) / 2));
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(22, 135, 210, .2), transparent 28rem),
+        radial-gradient(circle at 88% 78%, rgba(233, 126, 69, .18), transparent 28rem),
+        var(--moments-background);
+      border-block: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .mobile-app-layout {
+      display: grid;
+      grid-template-columns: minmax(18rem, .82fr) minmax(28rem, 1.18fr);
+      gap: clamp(3rem, 8vw, 7rem);
+      align-items: center;
+    }
+    .mobile-app h2 {
+      max-width: 11ch;
+      margin: 1rem 0 1.2rem;
+      font-size: clamp(3rem, 6vw, 5.7rem);
+    }
+    .mobile-app-copy > p {
+      max-width: 35rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.18rem;
+    }
+    .platform-grid {
+      display: grid;
+      gap: .85rem;
+      margin-top: 2rem;
+    }
+    .platform-card {
+      display: grid;
+      grid-template-columns: 2.8rem 1fr auto;
+      gap: .9rem;
+      align-items: center;
+      padding: 1rem 1.05rem;
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 1.35rem;
+      background: var(--surface-glass);
+      box-shadow: 0 14px 34px rgba(49, 77, 66, .08);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .platform-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(49, 77, 66, .14);
+    }
+    .platform-mark {
+      display: grid;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      border-radius: .9rem;
+      color: white;
+      background: var(--ink);
+      font: 800 1.05rem/1 var(--display);
+    }
+    .platform-card:nth-child(2) .platform-mark { background: var(--green); }
+    .platform-card strong,
+    .platform-card small { display: block; font-family: var(--display); }
+    .platform-card strong { font-size: 1rem; line-height: 1.25; }
+    .platform-card small { margin-top: .2rem; color: var(--muted); font-size: .76rem; line-height: 1.35; }
+    .platform-arrow { color: var(--blue-deep); font: 800 1.25rem/1 var(--display); }
+    .account-note {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font: 650 .83rem/1.45 var(--display);
+    }
+    .account-note::before {
+      content: "";
+      flex: 0 0 auto;
+      width: .55rem;
+      height: .55rem;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 .25rem rgba(61, 155, 105, .14);
+    }
+    .phone-gallery {
+      position: relative;
+      min-height: 42rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 16rem));
+      justify-content: center;
+      align-items: center;
+      gap: clamp(1rem, 3vw, 2rem);
+    }
+    .phone-gallery::before {
+      content: "";
+      position: absolute;
+      width: min(40rem, 115%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(207, 229, 243, .9), rgba(220, 233, 220, .72) 58%, rgba(245, 221, 202, .86));
+      filter: blur(.2px);
+    }
+    .phone {
+      position: relative;
+      z-index: 1;
+      min-height: 35rem;
+      padding: 2.8rem .7rem 1rem;
+      border: .5rem solid #17302a;
+      border-radius: 2.8rem;
+      background: linear-gradient(170deg, #e7edf9, #fff2f3 72%);
+      box-shadow: 0 34px 70px rgba(24, 49, 43, .25);
+      overflow: hidden;
+      color: #17231f;
+      font-family: var(--display);
+    }
+    .phone:nth-child(2) { transform: translateY(2.4rem) rotate(2.2deg); }
+    .phone-notch {
+      position: absolute;
+      top: .65rem;
+      left: 50%;
+      width: 5rem;
+      height: 1.35rem;
+      border-radius: 999px;
+      background: #17302a;
+      transform: translateX(-50%);
+    }
+    .phone-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: .2rem .2rem 1rem;
+    }
+    .phone-topbar strong { font-size: 1.08rem; letter-spacing: -.03em; }
+    .online-dot { width: .48rem; height: .48rem; border-radius: 50%; background: #2fc465; }
+    .phone-title {
+      margin: .3rem 0 1rem;
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: -.04em;
+    }
+    .mini-message {
+      max-width: 88%;
+      margin: .65rem 0;
+      padding: .8rem .9rem;
+      border-radius: 1.15rem 1.15rem 1.15rem .35rem;
+      background: rgba(255,255,255,.72);
+      font-size: .77rem;
+      line-height: 1.45;
+      box-shadow: 0 8px 20px rgba(42, 62, 54, .07);
+    }
+    .mini-message.user {
+      margin-left: auto;
+      color: white;
+      border-radius: 1.15rem 1.15rem .35rem 1.15rem;
+      background: #0b86e8;
+    }
+    .mini-task-card {
+      margin-top: .75rem;
+      padding: .8rem;
+      border: 1px solid rgba(24,49,43,.08);
+      border-radius: 1.1rem;
+      background: rgba(255,255,255,.82);
+    }
+    .mini-task-card small { display: block; color: #6f7a76; font-size: .62rem; }
+    .mini-task-card strong { display: block; margin-top: .2rem; font-size: .75rem; line-height: 1.35; }
+    .mini-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 0 1rem;
+      padding: .25rem;
+      border-radius: 999px;
+      background: rgba(24,49,43,.08);
+      font-size: .58rem;
+      text-align: center;
+    }
+    .mini-tabs span { padding: .38rem .2rem; }
+    .mini-tabs span:first-child { border-radius: 999px; background: white; font-weight: 800; }
+    .mini-group {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem .25rem .55rem;
+      color: #6b7471;
+      font-size: .67rem;
+      font-weight: 750;
+    }
+    .mini-task {
+      display: grid;
+      grid-template-columns: 1.2rem 1fr;
+      gap: .55rem;
+      align-items: center;
+      margin-bottom: .58rem;
+      padding: .72rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,.82);
+      font-size: .67rem;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+    .mini-check { width: 1.15rem; height: 1.15rem; border: 2px solid #8d9692; border-radius: 50%; }
+    .mini-check.done { display: grid; place-items: center; color: white; border-color: #2fc465; background: #2fc465; }
+    .mini-check.done::after { content: "✓"; font-size: .7rem; }
     .trust {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -505,6 +723,7 @@
       body > header { align-items: flex-start; padding-top: 1.1rem; }
       nav { justify-content: flex-end; flex-wrap: wrap; gap: .7rem 1rem; }
       nav a:not(.nav-cta) { display: none; }
+      .nav-cta.secondary { display: none; }
       .hero { padding-top: 4rem; }
       .home-hero { min-height: 0; grid-template-columns: 1fr; padding-top: 3.8rem; }
       .home-hero h1 { font-size: clamp(3.15rem, 15vw, 4.8rem); }
@@ -520,7 +739,19 @@
       .shared-task { grid-template-columns: auto 1fr; }
       .task-owner { grid-column: 2; justify-self: start; margin-top: -.35rem; }
       .trust-copy { padding-top: 0; }
+      .mobile-app-layout { grid-template-columns: 1fr; }
+      .phone-gallery { min-height: 35rem; grid-template-columns: repeat(2, minmax(0, 12rem)); gap: .75rem; }
+      .phone-gallery::before { width: 125%; }
+      .phone { min-height: 30rem; padding-inline: .52rem; border-width: .38rem; border-radius: 2.2rem; }
+      .phone:nth-child(2) { transform: translateY(1.5rem) rotate(1.5deg); }
       footer { flex-direction: column; }
+    }
+    @media (max-width: 470px) {
+      .hero-actions .button { width: 100%; }
+      .phone-gallery { margin-inline: -.8rem; grid-template-columns: repeat(2, minmax(0, 10.5rem)); }
+      .phone { min-height: 27rem; }
+      .mini-message { font-size: .65rem; }
+      .mini-task { padding: .55rem; font-size: .58rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -537,13 +768,15 @@
       </a>
       <nav aria-label="Main navigation">
         <a href="./#how-it-helps">How it helps</a>
+        <a href="./#mobile-app">Mobile app</a>
         <a href="./#households">Households</a>
         <a href="./privacy">Privacy</a>
         <button class="theme-toggle" type="button" data-theme-toggle>
           <span class="theme-toggle__icon" aria-hidden="true"></span>
           <span class="theme-toggle__label" data-theme-label>Dark</span>
         </button>
-        <a class="nav-cta" href="https://app.padni.ai">Open Padni</a>
+        <a class="nav-cta secondary" href="https://app.padni.ai">Open Padni Web</a>
+        <a class="nav-cta" href="./#mobile-app">Open Padni Mobile</a>
       </nav>
     </header>
   <main>
@@ -553,7 +786,8 @@
         <h1>Because remembering everything <em>shouldn't be your job.</em></h1>
         <p>Padni quietly remembers the plans, promises, dates, and everyday details that keep circling in your head, then helps you deal with them at the right time.</p>
         <div class="hero-actions">
-          <a class="button" href="https://app.padni.ai">Give Padni something to remember</a>
+          <a class="button" href="#mobile-app">Open Padni Mobile</a>
+          <a class="button secondary" href="https://app.padni.ai">Open Padni Web</a>
           <a class="story-link" href="#moments">See what that feels like</a>
         </div>
       </div>
@@ -580,6 +814,54 @@
           </article>
         </div>
       </aside>
+    </section>
+
+    <section class="mobile-app" id="mobile-app" aria-labelledby="mobile-app-title">
+      <div class="mobile-app-layout">
+        <div class="mobile-app-copy">
+          <span class="eyebrow">Padni in your pocket</span>
+          <h2 id="mobile-app-title">Life happens away from your desk.</h2>
+          <p>Chat to Padni, check today’s tasks, and capture the thing you just remembered wherever you are. Use the same account on mobile and the web.</p>
+          <div class="platform-grid" aria-label="Download Padni">
+            <a class="platform-card" href="https://testflight.apple.com/join/SWBeY5Gx" target="_blank" rel="noopener">
+              <span class="platform-mark" aria-hidden="true">iOS</span>
+              <span><strong>Get Padni for iPhone</strong><small>Available now through TestFlight</small></span>
+              <span class="platform-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="platform-card" href="https://play.google.com/apps/testing/com.padni.app" target="_blank" rel="noopener">
+              <span class="platform-mark" aria-hidden="true">A</span>
+              <span><strong>Join the Android alpha</strong><small>Google Play tester access required</small></span>
+              <span class="platform-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="account-note">One Padni account keeps your conversations, tasks, and projects together.</p>
+        </div>
+        <div class="phone-gallery" aria-label="Preview of Padni on a phone">
+          <div class="phone" aria-label="Padni chat preview">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <div class="phone-topbar"><strong>Padni</strong><span class="online-dot" aria-label="Connected"></span></div>
+            <div class="mini-message user">Guests are coming on Saturday. Help me get ready?</div>
+            <div class="mini-message">Of course. I’ve brought the useful bits into today without making the list feel overwhelming.</div>
+            <div class="mini-task-card">
+              <small>Guest prep · Today</small>
+              <strong>Fresh bedding and a quick kitchen reset</strong>
+            </div>
+            <div class="mini-message user">Perfect — remind me about drinks tomorrow.</div>
+            <div class="mini-message">Done. You can leave that one with me.</div>
+          </div>
+          <div class="phone" aria-label="Padni tasks preview">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <h3 class="phone-title">Tasks</h3>
+            <div class="mini-tabs"><span>Today</span><span>Tomorrow</span><span>Day</span></div>
+            <div class="mini-group"><span>Guest prep</span><span>1/3 done</span></div>
+            <div class="mini-task"><span class="mini-check done"></span><span>Put fresh bedding on</span></div>
+            <div class="mini-task"><span class="mini-check"></span><span>Pick up drinks</span></div>
+            <div class="mini-task"><span class="mini-check"></span><span>Quick kitchen reset</span></div>
+            <div class="mini-group"><span>General</span><span>0/1 done</span></div>
+            <div class="mini-task"><span class="mini-check"></span><span>Post the birthday card</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section problem" aria-labelledby="problem-title">
@@ -740,7 +1022,10 @@
     <section class="final-cta" id="start" aria-labelledby="cta-title">
       <h2 id="cta-title">Stop trying to remember everything.</h2>
       <p>Give Padni one thing that is taking up space in your head. Let life feel a little lighter from there.</p>
-      <a class="button" href="https://app.padni.ai">Open Padni</a>
+      <div class="hero-actions" style="justify-content: center;">
+        <a class="button" href="#mobile-app">Open Padni Mobile</a>
+        <a class="button secondary" href="https://app.padni.ai">Open Padni Web</a>
+      </div>
     </section>
     </main>
   <footer>
