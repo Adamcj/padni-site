@@ -465,6 +465,289 @@
     .progress-token div { position: relative; z-index: 1; max-width: 10rem; text-align: center; font-family: var(--display); }
     .progress-token strong { display: block; font-size: clamp(3.6rem, 8vw, 5.8rem); letter-spacing: -.07em; line-height: .9; }
     .progress-token span { display: block; margin-top: .7rem; font-size: .78rem; font-weight: 800; line-height: 1.25; letter-spacing: .07em; text-transform: uppercase; }
+    .web-app-showcase {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      padding: clamp(5.5rem, 10vw, 9rem) max(1rem, calc((100vw - 1120px) / 2));
+      color: #f5faf7;
+      background:
+        radial-gradient(circle at 8% 14%, rgba(22, 135, 210, .3), transparent 28rem),
+        radial-gradient(circle at 92% 78%, rgba(233, 126, 69, .23), transparent 27rem),
+        #142823;
+      overflow: hidden;
+    }
+    .web-app-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+    }
+    .web-app-heading h2 {
+      max-width: 12ch;
+      margin: 1rem 0 1.1rem;
+      color: white;
+      font-size: clamp(3rem, 6vw, 5.7rem);
+    }
+    .web-app-heading p {
+      max-width: 43rem;
+      margin: 0;
+      color: #cbd9d4;
+      font-size: 1.18rem;
+    }
+    .web-app-heading .button {
+      flex: 0 0 auto;
+      color: #10231e;
+      background: #f7fbf8;
+    }
+    .web-preview-stage {
+      position: relative;
+      padding: clamp(.45rem, 1.4vw, 1rem);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: clamp(1.35rem, 3vw, 2.2rem);
+      background: rgba(255,255,255,.07);
+      box-shadow: 0 40px 100px rgba(0,0,0,.32);
+    }
+    .web-preview-stage::before {
+      content: "";
+      position: absolute;
+      inset: 9% 6% -8%;
+      z-index: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(146,205,238,.23), rgba(223,202,229,.18), rgba(242,189,158,.2));
+      filter: blur(48px);
+    }
+    .web-browser {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: clamp(1rem, 2.5vw, 1.7rem);
+      background: #f8f8fc;
+      box-shadow: 0 30px 80px rgba(0,0,0,.28);
+      font-family: var(--display);
+    }
+    .web-browser-bar {
+      height: 3rem;
+      display: grid;
+      grid-template-columns: auto minmax(8rem, 26rem) auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0 1rem;
+      color: #68716e;
+      border-bottom: 1px solid rgba(31,42,39,.1);
+      background: rgba(255,255,255,.94);
+    }
+    .web-browser-dots { display: flex; gap: .38rem; }
+    .web-browser-dots i { width: .62rem; height: .62rem; border-radius: 50%; background: #ef7f6d; }
+    .web-browser-dots i:nth-child(2) { background: #edc55d; }
+    .web-browser-dots i:nth-child(3) { background: #62c887; }
+    .web-address {
+      overflow: hidden;
+      padding: .38rem .8rem;
+      border-radius: 999px;
+      background: #f0f1f4;
+      font-size: .68rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .web-connected {
+      display: inline-flex;
+      align-items: center;
+      justify-self: end;
+      gap: .35rem;
+      font-size: .66rem;
+      font-weight: 750;
+    }
+    .web-connected::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: #2fc465; }
+    .web-shell {
+      display: grid;
+      grid-template-columns: 4.6rem minmax(0, 1fr);
+      min-height: 37rem;
+      color: #171b1a;
+      background:
+        linear-gradient(155deg, rgba(218,230,252,.8), rgba(255,238,241,.72) 68%),
+        #f7f7fb;
+    }
+    .web-sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .62rem;
+      padding: 1.1rem .65rem;
+      border-right: 1px solid rgba(31,42,39,.08);
+      background: rgba(255,255,255,.66);
+    }
+    .web-logo {
+      display: grid;
+      width: 2.55rem;
+      height: 2.55rem;
+      margin-bottom: .65rem;
+      place-items: center;
+      border-radius: .82rem;
+      color: white;
+      background: #17302a;
+      font-size: .92rem;
+      font-weight: 850;
+      box-shadow: 0 10px 25px rgba(23,48,42,.2);
+    }
+    .web-nav-icon {
+      display: grid;
+      width: 2.45rem;
+      height: 2.45rem;
+      place-items: center;
+      border-radius: .85rem;
+      color: #747d7a;
+      background: rgba(255,255,255,.64);
+      font-size: .92rem;
+      font-weight: 800;
+    }
+    .web-nav-icon.active { color: #087bd0; background: #e7f3fc; }
+    .web-nav-icon.settings { margin-top: auto; }
+    .web-workspace { min-width: 0; padding: clamp(1rem, 2.4vw, 1.65rem); }
+    .web-workspace-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+    }
+    .web-workspace-header strong { font-size: 1.18rem; letter-spacing: -.035em; }
+    .web-workspace-header span {
+      padding: .4rem .65rem;
+      border: 1px solid rgba(31,42,39,.08);
+      border-radius: 999px;
+      color: #68716e;
+      background: rgba(255,255,255,.66);
+      font-size: .61rem;
+      font-weight: 700;
+    }
+    .web-panels {
+      display: grid;
+      grid-template-columns: minmax(17rem, 1.2fr) repeat(2, minmax(12rem, .8fr));
+      gap: .8rem;
+      align-items: stretch;
+    }
+    .web-panel {
+      min-width: 0;
+      min-height: 29rem;
+      padding: .9rem;
+      border: 1px solid rgba(31,42,39,.1);
+      border-radius: 1.2rem;
+      background: rgba(255,255,255,.7);
+      box-shadow: 0 14px 34px rgba(49,77,66,.08);
+    }
+    .web-panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .7rem;
+      margin-bottom: .85rem;
+    }
+    .web-panel-head strong { font-size: .85rem; letter-spacing: -.02em; }
+    .web-panel-head small { color: #838b88; font-size: .55rem; font-weight: 700; }
+    .web-chat {
+      display: flex;
+      flex-direction: column;
+    }
+    .web-bubble {
+      max-width: 88%;
+      margin-bottom: .55rem;
+      padding: .65rem .72rem;
+      border-radius: .9rem .9rem .9rem .28rem;
+      color: #2b3330;
+      background: #f0edf2;
+      font-size: .63rem;
+      line-height: 1.45;
+    }
+    .web-bubble.user {
+      align-self: flex-end;
+      color: white;
+      border-radius: .9rem .9rem .28rem .9rem;
+      background: #0b86e8;
+    }
+    .web-calendar-card {
+      margin: .1rem 0 .6rem;
+      padding: .7rem;
+      border: 1px solid rgba(31,42,39,.09);
+      border-radius: .9rem;
+      background: rgba(255,255,255,.9);
+    }
+    .web-calendar-card > strong { display: block; margin-bottom: .35rem; font-size: .68rem; }
+    .web-event {
+      display: grid;
+      grid-template-columns: 3.2rem minmax(0,1fr);
+      gap: .5rem;
+      padding: .3rem 0;
+      color: #777f7c;
+      font-size: .55rem;
+    }
+    .web-event strong { color: #222a27; font-size: .57rem; }
+    .web-composer {
+      margin-top: auto;
+      padding: .58rem .7rem;
+      border: 1px solid rgba(31,42,39,.11);
+      border-radius: 999px;
+      color: #9aa09e;
+      background: rgba(255,255,255,.84);
+      font-size: .58rem;
+    }
+    .web-list-group {
+      display: flex;
+      justify-content: space-between;
+      margin: .8rem .12rem .4rem;
+      color: #717a77;
+      font-size: .57rem;
+      font-weight: 780;
+    }
+    .web-list-item {
+      display: grid;
+      grid-template-columns: 1.05rem minmax(0,1fr);
+      gap: .48rem;
+      align-items: center;
+      margin-bottom: .42rem;
+      padding: .62rem;
+      border-radius: .85rem;
+      background: rgba(255,255,255,.84);
+      font-size: .59rem;
+      font-weight: 750;
+      line-height: 1.28;
+    }
+    .web-list-item small { display: block; margin-top: .12rem; color: #969c9a; font-size: .48rem; font-weight: 650; }
+    .web-check { width: 1rem; height: 1rem; border: 1.5px solid #939b98; border-radius: 50%; }
+    .web-check.done { display: grid; place-items: center; color: white; border-color: #2fc465; background: #2fc465; font-size: .58rem; }
+    .web-project-row {
+      display: grid;
+      grid-template-columns: 1.5rem minmax(0,1fr) auto;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: .5rem;
+      padding: .65rem;
+      border-radius: .9rem;
+      background: rgba(255,255,255,.84);
+    }
+    .web-project-symbol {
+      display: grid;
+      width: 1.5rem;
+      height: 1.5rem;
+      place-items: center;
+      border-radius: .5rem;
+      color: #24ae59;
+      background: #e5f8eb;
+      font-size: .67rem;
+      font-weight: 850;
+    }
+    .web-project-row strong,
+    .web-project-row small { display: block; }
+    .web-project-row strong {
+      overflow: hidden;
+      font-size: .57rem;
+      line-height: 1.28;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .web-project-row small { margin-top: .12rem; color: #969c9a; font-size: .47rem; }
+    .web-project-row > span:last-child { color: #a1a7a5; font-size: .75rem; }
     .mobile-app {
       width: 100vw;
       margin-left: calc(50% - 50vw);
@@ -780,6 +1063,9 @@
     footer a { color: inherit; }
     @media (max-width: 1050px) {
       .mobile-app-layout { grid-template-columns: 1fr; }
+      .web-panels { grid-template-columns: minmax(17rem, 1.2fr) minmax(12rem, .8fr); }
+      .web-panel.projects { grid-column: 1 / -1; min-height: auto; }
+      .web-panel.projects .web-projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
     }
     @media (max-width: 760px) {
       body > header { align-items: flex-start; padding-top: 1.1rem; }
@@ -807,6 +1093,20 @@
       .phone:nth-child(1) { transform: rotate(-1.2deg); }
       .phone:nth-child(2) { transform: translateY(1.5rem) rotate(1.5deg); }
       .phone:nth-child(3) { grid-column: 1 / -1; width: 12rem; justify-self: center; transform: translateY(1rem) rotate(-1deg); }
+      .web-app-heading { grid-template-columns: 1fr; }
+      .web-app-heading .button { justify-self: start; }
+      .web-browser-bar { grid-template-columns: auto minmax(0,1fr); gap: .65rem; }
+      .web-connected { display: none; }
+      .web-shell { grid-template-columns: 3.25rem minmax(0,1fr); }
+      .web-sidebar { padding-inline: .4rem; }
+      .web-logo, .web-nav-icon { width: 2.15rem; height: 2.15rem; }
+      .web-workspace { padding: .75rem; }
+      .web-panels { grid-template-columns: 1fr 1fr; }
+      .web-panel { min-height: 20rem; padding: .7rem; }
+      .web-panel.chat { grid-column: 1 / -1; min-height: 23rem; }
+      .web-panel.projects { grid-column: auto; min-height: 20rem; }
+      .web-panel.projects .web-projects-grid { display: block; }
+      .web-bubble { font-size: .58rem; }
       footer { flex-direction: column; }
     }
     @media (max-width: 470px) {
@@ -816,6 +1116,25 @@
       .phone:nth-child(3) { width: 10.5rem; }
       .mini-message { font-size: .65rem; }
       .mini-task { padding: .55rem; font-size: .58rem; }
+      .web-app-showcase { padding-inline: .65rem; }
+      .web-preview-stage { padding: .3rem; }
+      .web-browser-bar { height: 2.55rem; padding-inline: .65rem; }
+      .web-browser-dots i { width: .48rem; height: .48rem; }
+      .web-address { font-size: .58rem; }
+      .web-shell { grid-template-columns: 2.8rem minmax(0,1fr); }
+      .web-sidebar { gap: .45rem; }
+      .web-logo, .web-nav-icon { width: 1.85rem; height: 1.85rem; border-radius: .62rem; font-size: .7rem; }
+      .web-workspace-header { align-items: flex-start; }
+      .web-workspace-header strong { font-size: .9rem; }
+      .web-workspace-header span { display: none; }
+      .web-panels { grid-template-columns: 1fr; }
+      .web-panel { min-height: 17rem; }
+      .web-panel.chat { min-height: 22rem; }
+      .web-panel.tasks,
+      .web-panel.projects { min-height: auto; }
+      .web-panel-head strong { font-size: .7rem; }
+      .web-panel-head small { display: none; }
+      .web-list-item, .web-project-row { padding: .48rem; font-size: .52rem; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -833,6 +1152,7 @@
       <nav aria-label="Main navigation">
         <a href="./#how-it-helps">How it helps</a>
         <a href="./#mobile-app">Mobile app</a>
+        <a href="./#web-app">Web app</a>
         <a href="./#households">Households</a>
         <a href="./privacy">Privacy</a>
         <button class="theme-toggle" type="button" data-theme-toggle>
@@ -966,6 +1286,115 @@
               <span class="mini-project-arrow" aria-hidden="true">›</span>
             </div>
             <div class="mini-project-search">⌕ &nbsp; Search projects</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="web-app-showcase" id="web-app" aria-labelledby="web-app-title">
+      <div class="web-app-heading">
+        <div>
+          <span class="eyebrow">Padni on the web</span>
+          <h2 id="web-app-title">More room when you want to sit down and sort things.</h2>
+          <p>Open the same Padni account in any browser. Your conversation, today’s tasks, and ongoing projects stay together—just with more space to see the whole picture.</p>
+        </div>
+        <a class="button" href="https://app.padni.ai">Open Padni Web</a>
+      </div>
+
+      <div class="web-preview-stage">
+        <div class="web-browser" aria-label="Preview of the Padni web app showing chat, tasks, and projects">
+          <div class="web-browser-bar" aria-hidden="true">
+            <span class="web-browser-dots"><i></i><i></i><i></i></span>
+            <span class="web-address">app.padni.ai</span>
+            <span class="web-connected">Connected</span>
+          </div>
+          <div class="web-shell">
+            <aside class="web-sidebar" aria-label="Web app navigation">
+              <span class="web-logo">P</span>
+              <span class="web-nav-icon active" aria-label="Chat">✦</span>
+              <span class="web-nav-icon" aria-label="Tasks">✓</span>
+              <span class="web-nav-icon" aria-label="Projects">▱</span>
+              <span class="web-nav-icon settings" aria-label="Settings">⚙</span>
+            </aside>
+            <div class="web-workspace">
+              <div class="web-workspace-header">
+                <strong>Good morning, Adam</strong>
+                <span>Everything Padni is carrying, in one place</span>
+              </div>
+              <div class="web-panels">
+                <article class="web-panel web-chat chat">
+                  <div class="web-panel-head">
+                    <strong>Chat</strong>
+                    <small>Connected</small>
+                  </div>
+                  <div class="web-bubble user">Guests are coming on Saturday. Help me get ready?</div>
+                  <div class="web-bubble">Of course. I’ve brought the useful bits into today and kept the rest out of your way.</div>
+                  <div class="web-calendar-card">
+                    <strong>Saturday at a glance</strong>
+                    <div class="web-event"><span>11:00</span><strong>Pick up drinks</strong></div>
+                    <div class="web-event"><span>15:00</span><strong>Quick kitchen reset</strong></div>
+                    <div class="web-event"><span>18:30</span><strong>Guests arrive</strong></div>
+                  </div>
+                  <div class="web-bubble user">Perfect—remind me about the birthday card too.</div>
+                  <div class="web-bubble">Done. You can leave that one with me.</div>
+                  <div class="web-composer">Chat to Padni…</div>
+                </article>
+
+                <article class="web-panel tasks">
+                  <div class="web-panel-head">
+                    <strong>Today’s tasks</strong>
+                    <small>2 of 4 done</small>
+                  </div>
+                  <div class="web-list-group"><span>Guest prep</span><span>1/3</span></div>
+                  <div class="web-list-item">
+                    <span class="web-check done">✓</span>
+                    <span>Put fresh bedding on<small>Completed this morning</small></span>
+                  </div>
+                  <div class="web-list-item">
+                    <span class="web-check"></span>
+                    <span>Pick up drinks<small>Due at 11:00</small></span>
+                  </div>
+                  <div class="web-list-item">
+                    <span class="web-check"></span>
+                    <span>Quick kitchen reset<small>Before 15:00</small></span>
+                  </div>
+                  <div class="web-list-group"><span>General</span><span>1/1</span></div>
+                  <div class="web-list-item">
+                    <span class="web-check done">✓</span>
+                    <span>Post the birthday card<small>Remembered by Padni</small></span>
+                  </div>
+                </article>
+
+                <article class="web-panel projects">
+                  <div class="web-panel-head">
+                    <strong>Projects</strong>
+                    <small>Always up to date</small>
+                  </div>
+                  <div class="web-projects-grid">
+                    <div class="web-project-row">
+                      <span class="web-project-symbol">✓</span>
+                      <span><strong>Date Ideas for Me &amp; Dee</strong><small>Running date-night list</small></span>
+                      <span>›</span>
+                    </div>
+                    <div class="web-project-row">
+                      <span class="web-project-symbol">✓</span>
+                      <span><strong>Meal Ideas</strong><small>Recipes and meals to try</small></span>
+                      <span>›</span>
+                    </div>
+                    <div class="web-project-row">
+                      <span class="web-project-symbol">✓</span>
+                      <span><strong>Games I Want to Play</strong><small>Personal games list</small></span>
+                      <span>›</span>
+                    </div>
+                    <div class="web-project-row">
+                      <span class="web-project-symbol">▱</span>
+                      <span><strong>Things I Want But Can’t Justify</strong><small>A considered wishlist</small></span>
+                      <span>›</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </div>
