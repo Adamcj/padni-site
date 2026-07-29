@@ -479,8 +479,8 @@
     }
     .mobile-app-layout {
       display: grid;
-      grid-template-columns: minmax(18rem, .82fr) minmax(28rem, 1.18fr);
-      gap: clamp(3rem, 8vw, 7rem);
+      grid-template-columns: minmax(18rem, .72fr) minmax(35rem, 1.28fr);
+      gap: clamp(2.5rem, 5vw, 4.5rem);
       align-items: center;
     }
     .mobile-app h2 {
@@ -554,15 +554,15 @@
       position: relative;
       min-height: 42rem;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 16rem));
+      grid-template-columns: repeat(3, minmax(0, 11.25rem));
       justify-content: center;
       align-items: center;
-      gap: clamp(1rem, 3vw, 2rem);
+      gap: clamp(.65rem, 1.4vw, 1rem);
     }
     .phone-gallery::before {
       content: "";
       position: absolute;
-      width: min(40rem, 115%);
+      width: min(44rem, 125%);
       aspect-ratio: 1;
       border-radius: 50%;
       background: linear-gradient(145deg, rgba(207, 229, 243, .9), rgba(220, 233, 220, .72) 58%, rgba(245, 221, 202, .86));
@@ -581,7 +581,9 @@
       color: #17231f;
       font-family: var(--display);
     }
-    .phone:nth-child(2) { transform: translateY(2.4rem) rotate(2.2deg); }
+    .phone:nth-child(1) { transform: translateY(.2rem) rotate(-1.5deg); }
+    .phone:nth-child(2) { transform: translateY(2.4rem) rotate(1.7deg); }
+    .phone:nth-child(3) { transform: translateY(-.7rem) rotate(-1deg); }
     .phone-notch {
       position: absolute;
       top: .65rem;
@@ -667,6 +669,63 @@
     .mini-check { width: 1.15rem; height: 1.15rem; border: 2px solid #8d9692; border-radius: 50%; }
     .mini-check.done { display: grid; place-items: center; color: white; border-color: #2fc465; background: #2fc465; }
     .mini-check.done::after { content: "✓"; font-size: .7rem; }
+    .mini-project {
+      display: grid;
+      grid-template-columns: 1.55rem minmax(0, 1fr) auto;
+      gap: .48rem;
+      align-items: center;
+      margin-bottom: .58rem;
+      padding: .68rem .58rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,.84);
+      box-shadow: 0 8px 18px rgba(42, 62, 54, .05);
+    }
+    .mini-project-icon {
+      display: grid;
+      width: 1.55rem;
+      height: 1.55rem;
+      place-items: center;
+      border-radius: .52rem;
+      color: #7b827f;
+      background: #f0f1f2;
+      font-size: .82rem;
+      font-weight: 850;
+    }
+    .mini-project-icon.list { color: #24ae59; background: #e5f8eb; }
+    .mini-project-copy { min-width: 0; }
+    .mini-project-copy strong,
+    .mini-project-copy small { display: block; }
+    .mini-project-copy strong {
+      overflow: hidden;
+      font-size: .62rem;
+      line-height: 1.22;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mini-project-copy small {
+      margin-top: .15rem;
+      overflow: hidden;
+      color: #818986;
+      font-size: .48rem;
+      line-height: 1.25;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mini-project-copy .mini-project-meta { color: #a1a7a4; font-size: .43rem; }
+    .mini-project-arrow { color: #b7bcba; font-size: .9rem; font-weight: 800; }
+    .mini-project-search {
+      position: absolute;
+      right: .65rem;
+      bottom: .75rem;
+      left: .65rem;
+      padding: .55rem .7rem;
+      color: #7e8582;
+      border: 1px solid rgba(24,49,43,.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,.76);
+      font-size: .55rem;
+      font-weight: 650;
+    }
     .trust {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -719,6 +778,9 @@
     }
     footer div { display: flex; gap: 1rem; flex-wrap: wrap; }
     footer a { color: inherit; }
+    @media (max-width: 1050px) {
+      .mobile-app-layout { grid-template-columns: 1fr; }
+    }
     @media (max-width: 760px) {
       body > header { align-items: flex-start; padding-top: 1.1rem; }
       nav { justify-content: flex-end; flex-wrap: wrap; gap: .7rem 1rem; }
@@ -739,17 +801,19 @@
       .shared-task { grid-template-columns: auto 1fr; }
       .task-owner { grid-column: 2; justify-self: start; margin-top: -.35rem; }
       .trust-copy { padding-top: 0; }
-      .mobile-app-layout { grid-template-columns: 1fr; }
-      .phone-gallery { min-height: 35rem; grid-template-columns: repeat(2, minmax(0, 12rem)); gap: .75rem; }
+      .phone-gallery { min-height: 67rem; grid-template-columns: repeat(2, minmax(0, 12rem)); gap: .75rem; align-items: start; padding-top: 2rem; }
       .phone-gallery::before { width: 125%; }
       .phone { min-height: 30rem; padding-inline: .52rem; border-width: .38rem; border-radius: 2.2rem; }
+      .phone:nth-child(1) { transform: rotate(-1.2deg); }
       .phone:nth-child(2) { transform: translateY(1.5rem) rotate(1.5deg); }
+      .phone:nth-child(3) { grid-column: 1 / -1; width: 12rem; justify-self: center; transform: translateY(1rem) rotate(-1deg); }
       footer { flex-direction: column; }
     }
     @media (max-width: 470px) {
       .hero-actions .button { width: 100%; }
-      .phone-gallery { margin-inline: -.8rem; grid-template-columns: repeat(2, minmax(0, 10.5rem)); }
+      .phone-gallery { min-height: 61rem; margin-inline: -.8rem; grid-template-columns: repeat(2, minmax(0, 10.5rem)); }
       .phone { min-height: 27rem; }
+      .phone:nth-child(3) { width: 10.5rem; }
       .mini-message { font-size: .65rem; }
       .mini-task { padding: .55rem; font-size: .58rem; }
     }
@@ -836,7 +900,7 @@
           </div>
           <p class="account-note">One Padni account keeps your conversations, tasks, and projects together.</p>
         </div>
-        <div class="phone-gallery" aria-label="Preview of Padni on a phone">
+        <div class="phone-gallery" aria-label="Preview of Padni chat, tasks, and projects on phones">
           <div class="phone" aria-label="Padni chat preview">
             <span class="phone-notch" aria-hidden="true"></span>
             <div class="phone-topbar"><strong>Padni</strong><span class="online-dot" aria-label="Connected"></span></div>
@@ -859,6 +923,49 @@
             <div class="mini-task"><span class="mini-check"></span><span>Quick kitchen reset</span></div>
             <div class="mini-group"><span>General</span><span>0/1 done</span></div>
             <div class="mini-task"><span class="mini-check"></span><span>Post the birthday card</span></div>
+          </div>
+          <div class="phone" aria-label="Padni projects preview">
+            <span class="phone-notch" aria-hidden="true"></span>
+            <h3 class="phone-title">Projects</h3>
+            <div class="mini-group"><span>Personal</span></div>
+            <div class="mini-project">
+              <span class="mini-project-icon" aria-hidden="true">▱</span>
+              <span class="mini-project-copy">
+                <strong>Things I Want But Can’t Justify</strong>
+                <small>Wishlist of unjustifiable purchases</small>
+                <small class="mini-project-meta">Markdown · v2 · 6 hr ago</small>
+              </span>
+              <span class="mini-project-arrow" aria-hidden="true">›</span>
+            </div>
+            <div class="mini-project">
+              <span class="mini-project-icon list" aria-hidden="true">✓</span>
+              <span class="mini-project-copy">
+                <strong>Games I Want to Play</strong>
+                <small>Games to play list</small>
+                <small class="mini-project-meta">Todo List · v5 · 5 days ago</small>
+              </span>
+              <span class="mini-project-arrow" aria-hidden="true">›</span>
+            </div>
+            <div class="mini-project">
+              <span class="mini-project-icon list" aria-hidden="true">✓</span>
+              <span class="mini-project-copy">
+                <strong>Book Tracker</strong>
+                <small>Book tracker — read and recommended</small>
+                <small class="mini-project-meta">Todo List · v6 · 1 wk ago</small>
+              </span>
+              <span class="mini-project-arrow" aria-hidden="true">›</span>
+            </div>
+            <div class="mini-group"><span>General</span></div>
+            <div class="mini-project">
+              <span class="mini-project-icon list" aria-hidden="true">✓</span>
+              <span class="mini-project-copy">
+                <strong>Date Ideas for Me &amp; Dee</strong>
+                <small>A running list of date night ideas for Adam and Dee</small>
+                <small class="mini-project-meta">Todo List · v3 · 1 wk ago</small>
+              </span>
+              <span class="mini-project-arrow" aria-hidden="true">›</span>
+            </div>
+            <div class="mini-project-search">⌕ &nbsp; Search projects</div>
           </div>
         </div>
       </div>
